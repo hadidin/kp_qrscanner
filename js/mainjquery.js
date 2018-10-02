@@ -1,5 +1,5 @@
 /*!
- * WebCodeCamJQuery 2.1.0 javascript Bar-Qr code decoder 
+ * WebCodeCamJQuery 2.1.0 javascript Bar-Qr code decoder
  * Author: Tóth András
  * Web: http://atandrastoth.co.uk
  * email: atandrastoth@gmail.com
@@ -41,6 +41,7 @@
             });
             scannedImg.attr("src", res.imgData);
             scannedQR.text(res.format + ": " + res.code);
+            
         },
         getDevicesError: function(error) {
             var p, message = "Error detected with the following parameters:\n";

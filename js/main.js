@@ -1,5 +1,5 @@
 /*!
- * WebCodeCamJS 2.1.0 javascript Bar code and QR code decoder 
+ * WebCodeCamJS 2.1.0 javascript Bar code and QR code decoder
  * Author: Tóth András
  * Web: http://atandrastoth.co.uk
  * email: atandrastoth@gmail.com
@@ -52,6 +52,12 @@
             });
             scannedImg.src = res.imgData;
             scannedQR[txt] = res.format + ": " + res.code;
+            var qr_data=res.code;
+            var link="http://localhost/webcodecamjs/api-interface/integration/public/api/vendorscannersimulator?user_qr="+qr_data;
+            (function(window, undefined){
+                var win = window.open(link, '_blank');
+                win.focus();
+            })(window);
         },
         getDevicesError: function(error) {
             var p, message = "Error detected with the following parameters:\n";
